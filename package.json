@@ -1,0 +1,61 @@
+{
+  "name": "dsh-plugin-qq-bot",
+  "version": "0.1.0",
+  "description": "QQ 官方机器人通道：在 QQ 群或私聊里直接与 DSH 会话对话 —— 收到消息后唤醒/续接一个 DSH Session，把回答发回 QQ",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/23bear/dsh-plugin-qq-bot.git"
+  },
+  "homepage": "https://github.com/23bear/dsh-plugin-qq-bot#readme",
+  "bugs": {
+    "url": "https://github.com/23bear/dsh-plugin-qq-bot/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "qq",
+    "qqbot",
+    "bot",
+    "channel",
+    "im"
+  ],
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node tools/check.mjs"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "tools",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4",
+    "@deepseek-ai/schemastery": "~3.18.4"
+  }
+}

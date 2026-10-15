@@ -1,0 +1,8 @@
+# qq-bot bundle patch: one host entry that bridges QQ into DSH Sessions.
+#
+# The whole plugin is a plain host entry — no browser half. Removing this bundle
+# from `dsh.profile.bundles` removes the channel and stops the gateway.
+
+- insert:
+    - id: qq-bot
+      name: dsh-plugin-qq-bot
